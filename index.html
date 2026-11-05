@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anderson Home Automation</title>
+  <meta name="description" content="Anderson Home Automation is a private, self-hosted smart-home controller that connects one household's Google Nest thermostats and Google Assistant to its own home automation server.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="./">Anderson Home Automation</a>
+    <nav><a href="./">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+  </header>
+  <main>
+    <h1>Anderson Home Automation</h1>
+    <p>Anderson Home Automation is a private, self-hosted smart-home application run by Garet Anderson
+      for his own household. It connects the household's Google accounts and devices to a home automation
+      server that runs on hardware inside the home. It is not a commercial product and is not offered to
+      the public.</p>
+
+    <h2>What the app does</h2>
+    <ul>
+      <li><strong>Thermostat control.</strong> Reads the status of the household's Google Nest thermostats
+        (temperature, humidity, mode, and set points) and changes their settings when a household member
+        asks, for example from a dashboard, a schedule, or a voice command.</li>
+      <li><strong>Thermostat events.</strong> Receives notifications from Google when a thermostat changes,
+        so the home server shows current values without constant polling.</li>
+      <li><strong>Google Assistant commands.</strong> Sends text commands and spoken announcements to the
+        household's own Google Assistant on request, for example to broadcast a reminder in the home.</li>
+    </ul>
+
+    <h2>Why it asks for access to your Google account</h2>
+    <p>When a household member signs in with Google, the app asks for these permissions, and uses each one
+      only for the feature listed:</p>
+    <table>
+      <tr><th>Permission (scope)</th><th>Used for</th></tr>
+      <tr><td>Google Nest Smart Device Management<br><code>https://www.googleapis.com/auth/sdm.service</code></td>
+        <td>Reading and changing the household's Nest thermostat settings.</td></tr>
+      <tr><td>Google Cloud Pub/Sub<br><code>https://www.googleapis.com/auth/pubsub</code></td>
+        <td>Receiving thermostat change notifications from Google.</td></tr>
+      <tr><td>Google Assistant SDK<br><code>https://www.googleapis.com/auth/assistant-sdk-prototype</code></td>
+        <td>Sending the household's own commands and announcements to Google Assistant.</td></tr>
+    </table>
+    <p>The app does not read email, contacts, files, photos, calendar, or location from your Google account,
+      does not sell or share Google user data, and does not use it for advertising. Details are in the
+      <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <h2>Who can use it</h2>
+    <p>Only Google accounts belonging to the owner's household, which the owner has added as users. Anyone
+      else who reaches the sign-in screen cannot use the app.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about the app or your data: <a href="mailto:privacy@garetanderson.com">privacy@garetanderson.com</a></p>
+  </main>
+  <footer>
+    <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a>
+    <p>Anderson Home Automation is an independent personal project. It is not affiliated with, endorsed by,
+      or sponsored by Google. Google, Nest, and Google Assistant are trademarks of Google LLC.</p>
+  </footer>
+</body>
+</html>
