@@ -4,19 +4,27 @@ Static site for https://www.garetanderson.com, served by GitHub Pages from `main
 It exists so the Google OAuth app **Anderson Home Automation** (Home Assistant's Nest
 and Google Assistant SDK sign-in) can pass Google branding verification:
 
+The front page (`index.html`) is a plain personal page that says nothing about the app.
+The app pages live under an unlinked subpath and carry `noindex`, so casual visitors and
+search engines don't see them. Anyone with the URL (for example from the consent screen)
+can still open them, and this repo is public.
+
 | Page | URL | Google requirement |
 |---|---|---|
-| Home | https://www.garetanderson.com/ | Explains the app's purpose, names the app, links the privacy policy |
-| Privacy Policy | https://www.garetanderson.com/privacy.html | Discloses Google user data use, Limited Use statement |
-| Terms of Service | https://www.garetanderson.com/terms.html | Optional link on the consent screen |
+| App home | https://www.garetanderson.com/apps/home-automation/ | Explains the app's purpose, names the app, links the privacy policy |
+| Privacy Policy | https://www.garetanderson.com/apps/home-automation/privacy.html | Discloses Google user data use, Limited Use statement |
+| Terms of Service | https://www.garetanderson.com/apps/home-automation/terms.html | Optional link on the consent screen |
+
+Don't link the app pages from the front page, and don't list them in `robots.txt`
+(that would advertise the path).
 
 Plain HTML and one stylesheet. No build step, no JavaScript, no trackers.
 Tracking: https://github.com/GaretAnderson/homeassistant/issues/131
 
 ## Keep these in sync
 
-- The consent screen **App name** must equal the name on the home page: `Anderson Home Automation`.
-- The scopes listed on the home page and in the privacy policy must match what the OAuth
+- The consent screen **App name** must equal the name on the app home page: `Anderson Home Automation`.
+- The scopes listed on the app home page and in the privacy policy must match what the OAuth
   client requests: `sdm.service`, `pubsub` (Nest) and `assistant-sdk-prototype` (Assistant SDK).
   If an integration is added to or removed from Home Assistant, update both pages.
 
